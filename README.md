@@ -1,13 +1,10 @@
-# easy-search-pagination
-Meteor Easy Search Blaze Example
+# Easy Search Pagination Example
+Meteor Easy Search Blaze Example using [Meteor](https://www.meteor.com) & [Matteodem/Meteor-Easy-Search Plugin](https://github.com/matteodem/meteor-easy-search)
 
-Install Simpl Schema
+Install Simpl Schema ```meteor npm install --save simpl-schema```
 
-```meteor npm install --save simpl-schema```
+## Issues
 
-
-## Currently Not Working
-
-1. Posts are not reactive when deleted
+1. Postlist doesnt update reactively when deleting Posts.
     * [PaginationComponent.js](imports/components/pagination/pagination.js)
     * [PostCollection.js](imports/api/posts/posts.js)
