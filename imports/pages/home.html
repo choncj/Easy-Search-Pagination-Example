@@ -1,0 +1,14 @@
+<template name="home">
+	<div class="container">
+		{{#if postReady}}
+		<div class="row">
+			<div class="col-md-5">
+				{{> addPost}}
+			</div>
+			<div class="col-md-7">
+				{{> pagination}}
+			</div>
+		</div>
+		{{/if}}
+	</div>
+</template>

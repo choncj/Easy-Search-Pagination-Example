@@ -1,0 +1,6 @@
+<template name="addPost">
+	<div class="page-header">
+			<h3>Add Post Form<small>Add New Posts right here</small></h3>
+		</div>
+	{{> quickForm collection=posts id="insertPostForm" type="method" meteormethod="post.insert"}}
+</template>

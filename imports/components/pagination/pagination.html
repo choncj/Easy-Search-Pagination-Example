@@ -1,0 +1,62 @@
+<template name="pagination">
+	<div class="postsBWidget">
+		<div class="page-header">
+			<h3>Posts <small>Subtext for header</small></h3>
+		</div>
+		<div class="row fixed-height-row">
+			<div class="col-md-6 fixed-height-col">
+				<div class="search-input">
+					{{> EasySearch.Input index=postsIndex }}
+				</div>
+			</div>
+			<div class="col-md-6 fixed-height-col">
+				<select class="sorting pull-right">
+					<option value="date1">Newest Posts</option>
+					<option value="date2">Oldest Posts</option>
+					<option value="title1">Title A-Z</option>
+					<option value="title2">Title Z-A</option>
+				</select>
+			</div>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-bordered table-striped table-hover">
+
+				<thead>
+					<tr>
+						<th class="text-center">Title</th>
+						<th class="text-center">Date</th>
+						<th class="text-center">Delete</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					{{#EasySearch.Each index=postsIndex }}
+					<tr>
+						<td class="col-xs-8 text-left text-middle">
+							<strong>{{username}}</strong>
+							<a href="#">{{title}}</a>
+						</td>
+						<td class="col-xs-3">
+							Created: <strong>{{createdAt}}</strong>
+						</td>
+						<td class="col-xs-1">
+							<button class="btn btn-danger delete">
+								<i class="fa fa-trash-o fa-lg"></i> Delete
+							</button>
+						</td>
+					</tr>
+					{{/EasySearch.Each}}
+				</tbody>
+
+			</table>
+			{{#EasySearch.IfNoResults index=postsIndex logic="AND" }}
+			<div>No search results found!</div>
+			{{/EasySearch.IfNoResults}} {{#EasySearch.IfSearching index=postsIndex logic="OR" }}
+			<div>Indexes are searching...</div>
+			{{/EasySearch.IfSearching}}
+		</div>
+
+		{{> EasySearch.Pagination index=postsIndex maxPages=5}}
+
+	</div>
+</template>
