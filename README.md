@@ -5,6 +5,4 @@ Install Simpl Schema ```meteor npm install --save simpl-schema```
 
 ## Issues
 
-1. Postlist doesnt update reactively when deleting Posts.
-    * [PaginationComponent.js](imports/components/pagination/pagination.js)
-    * [PostCollection.js](imports/api/posts/posts.js)
+> currently none
